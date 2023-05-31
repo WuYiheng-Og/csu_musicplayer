@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            tools:context=".login.view.LoginActivity">
+
+            <include
+                android:id="@+id/title"
+                layout="@layout/common_title"></include>
+
+
+            <ImageView
+                android:id="@+id/iv_qrcode"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/title" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_below="@id/iv_qrcode"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/login"
+                android:background="@drawable/shape_btn_login_confirm"
+                android:textColor="#ffffff"
+                android:layout_marginStart="@dimen/dp_60"
+                android:layout_marginEnd="@dimen/dp_60" />
+
+            <TextView
+                android:id="@+id/forget_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_login"
+                android:layout_marginStart="@dimen/dp_30"
+                android:text="@string/forget_pwd"
+                android:layout_marginTop="@dimen/dp_30" />
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_login"
+                android:text="@string/register"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/dp_30" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,97 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- popupwindow的动画效果-->
+    <style name="popupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/timepicker_anim_enter_bottom</item>
+        <item name="android:windowExitAnimation">@anim/timepicker_anim_out_bottom</item>
+    </style>
+
+    <!-- 自定义自己的主题样式 -->
+    <style name="AppThemes" parent="XUITheme.Phone">
+        <item name="colorPrimary">@color/menu_white_normal</item>
+        <item name="colorPrimaryDark">@color/menu_white_normal</item>
+        <item name="colorAccent">@color/red</item>
+    </style>
+
+    <!-- 自定义dialog-->
+    <style name="my_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/popupAnimation</item>
+        <item name="android:windowCloseOnTouchOutside">true</item><!-- 点外边可以消失  -->
+    </style>
+
+    <!-- 自定义dialog 淡出淡入效果-->
+    <style name="dialog_FadeIn" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowCloseOnTouchOutside">true</item> <!-- 点外边可以消失  -->
+        <item name="android:windowEnterAnimation">@anim/dialog_fadein</item>     <!-- 引用淡出淡入效果  -->
+        <item name="android:windowExitAnimation">@anim/dialog_fadeout</item>
+    </style>
+
+
+    <!--自定义dialog-->
+    <style name="MyDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowFrame">@null</item><!-- 是否有边框 -->
+        <item name="android:windowIsFloating">true</item><!--是否在悬浮Activity之上  -->
+        <item name="android:windowNoTitle">true</item>  <!--标题  -->
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowAnimationStyle">@style/mystyle</item>    <!-- 进入和退出的动画 -->
+        <item name="android:windowCloseOnTouchOutside">true</item><!-- 点外边可以消失  -->
+    </style>
+
+    <!--淡出淡入动画效果-->
+    <style name="mystyle" parent="android:Animation">
+    <item name="android:windowEnterAnimation">@anim/timepicker_anim_enter_bottom</item>
+    <item name="android:windowExitAnimation">@anim/timepicker_anim_out_bottom</item>
+</style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/splash_view</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
+
+    <style name="SongDetailTheme" parent="Theme.AppCompat">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="SearchHistoryTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <!--Loading-->
+    <style name="TransparentDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>
