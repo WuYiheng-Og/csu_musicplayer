@@ -10,7 +10,10 @@ import com.example.musicplayerdome.bean.DjProgramBean;
 import com.example.musicplayerdome.bean.DjRecommendBean;
 import com.example.musicplayerdome.bean.DjRecommendTypeBean;
 import com.example.musicplayerdome.bean.DjSubBean;
+import com.example.musicplayerdome.bean.KeyBean;
 import com.example.musicplayerdome.bean.MusicCanPlayBean;
+import com.example.musicplayerdome.bean.QrCheckBean;
+import com.example.musicplayerdome.bean.QrImgBean;
 import com.example.musicplayerdome.history.bean.SonghistoryBean;
 import com.example.musicplayerdome.main.bean.AlbumSublistBean;
 import com.example.musicplayerdome.main.bean.ArtistSublistBean;
@@ -64,6 +67,7 @@ import com.example.musicplayerdome.song.bean.SongMvDataBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 import yuncun.bean.YuncunReviewBean;
 
@@ -289,4 +293,16 @@ public interface ApiService {
 
     @GET("/register/anonimous")
     Observable<LoginBean> loginGuest();
+
+    @GET("/login/qr/key")
+    Observable<KeyBean> loginGetQrKey(@Query("rid") long timestamp);
+
+    @GET("/login/qr/create")
+    Observable<QrImgBean> loginCreateQrImg(@Query("key") String key,@Query("timestamp") long timestamp,@Query("qrimg") Boolean qrimg);
+
+    @GET("/login/qr/check")
+    Observable<QrCheckBean> loginCheckQr(@Query("key") String key,@Query("timestamp") long timestamp,@Query("noCookie") Boolean noCookie);
+
+    @POST("/login/status")
+    Observable<LoginBean> getLoginStatus(String cookie);
 }
